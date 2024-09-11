@@ -7,6 +7,7 @@ public class LinkedList<T>
     {
         public T     data;
         public Node  next;
+        public Object item;
 
         public Node()
         {

@@ -1,6 +1,7 @@
 package items;
 
 import containers.LinkedList;
+import containers.LinkedList.Node;
 
 
 /**
@@ -94,7 +95,12 @@ public class Inventory
     public boolean isFull()
     {
         // Replace the next line
+        if(slots.currentSize == capacity){
+            return true;
+        }
+        else{
         return false;
+        }
     }
 
     /**
@@ -116,11 +122,20 @@ public class Inventory
      * @return matching stack if one was found and `null` otherwise
      */
     public ItemStack findMatchingItemStack(ItemStack key)
-    {
-        // Add the necessary sequential search loop
+    {    
+        LinkedList.Node<ItemStack> current = this.slots.head;
 
-        return null;
-    }
+        while (current != null) {
+            // Check if the current node's data matches the key
+            if (current.data.equals(key)) {
+                return current.data; // Return the matching ItemStack
+            }
+            // Move to the next node
+            current = current.next;
+        }
+            return null;
+        }
+
 
     /**
      * This is the standard Linked List append operation from Review 01
