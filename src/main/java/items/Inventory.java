@@ -30,7 +30,10 @@ public class Inventory
     {
         // lhs needs to have items added to it.
         // rhs's size is needed
-        // lhs.????(rhs.????)
+        // lhs.????(rhs.????)\
+        int rhsSize = rhs.size();
+
+        lhs.addItems(rhsSize);
     }
 
     /**
@@ -121,20 +124,18 @@ public class Inventory
      *
      * @return matching stack if one was found and `null` otherwise
      */
-    public ItemStack findMatchingItemStack(ItemStack key)
-    {    
+    public ItemStack findMatchingItemStack(ItemStack key) {
         LinkedList.Node<ItemStack> current = this.slots.head;
 
         while (current != null) {
-            // Check if the current node's data matches the key
             if (current.data.equals(key)) {
-                return current.data; // Return the matching ItemStack
+                return current.data;
             }
             // Move to the next node
             current = current.next;
         }
-            return null;
-        }
+        return null;
+    }
 
 
     /**
@@ -142,12 +143,17 @@ public class Inventory
      *
      * @param toAdd data that we want to store in a Node and add to the list
      */
-    public void addItemStackNoCheck(ItemStack toAdd)
-    {
+    public void addItemStackNoCheck(ItemStack toAdd) {
         LinkedList.Node<ItemStack> newNode = new LinkedList.Node<>(toAdd);
-
-        // Use the appendNode/add logic from Review 1 as your starting point
-        // Once we reach this function... we know that `toAdd` must be stored
+    
+        if (this.slots.head == null) {
+            this.slots.head = newNode;
+            this.slots.tail = newNode;
+        } else {
+            this.slots.tail.next = newNode;
+            this.slots.tail = newNode;
+        }
+        this.slots.currentSize++;
     }
 
     /**
