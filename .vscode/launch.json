@@ -6,24 +6,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "main",
+            "name": "Main",
             "request": "launch",
-            "mainClass": "edu.odu.cs.cs417.main",
-            "projectName": "machine_assignment_0"
+            "mainClass": "edu.odu.cs.cs417.Main",
+            "projectName": "machine_assignment_0",
+            "args": "3 0.1 0.5 0.75"
         },
-        {
-            "type": "java",
-            "name": "main",
-            "request": "launch",
-            "mainClass": "edu.odu.cs.cs417.main",
-            "projectName": "2024-Fall-CS330-Inventory-LL"
-        },
-        {
-            "type": "java",
-            "name": "Storage",
-            "request": "launch",
-            "mainClass": "Storage",
-            "projectName": "2024-Fall-CS330-Inventory-LL"
-        }
     ]
 }

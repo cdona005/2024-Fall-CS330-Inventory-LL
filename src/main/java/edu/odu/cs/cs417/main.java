@@ -1,8 +1,13 @@
 package edu.odu.cs.cs417;
+/**
+ * This is the main class that handles command-line arguments, validates input,
+ * and calls the ConvertBase class to perform the conversion and display results.
+ * It expects the first argument to be the base (an integer) and subsequent arguments
+ * to be fractional numbers in base 10 (doubles) between 0 (inclusive) and 1 (exclusive).
+ */
 
 
-
-public class main {
+public class Main {
     public static void main(String[] args) {
         int base = Integer.parseInt(args[0]);
       

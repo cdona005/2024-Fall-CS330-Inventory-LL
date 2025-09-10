@@ -24,11 +24,11 @@ tasks.test {
 
 application {
  
-    mainClass.set("edu.odu.cs.cs417.main")
+    mainClass.set("edu.odu.cs.cs417.Main")
     
 }
 //Program restricted to [0,1)]
 //Change the argument here to test with different inputs
 tasks.named("run") {
-    //args = ["0", "0.25", "0.75", "0.1", "0.3"] 
+     
 }
