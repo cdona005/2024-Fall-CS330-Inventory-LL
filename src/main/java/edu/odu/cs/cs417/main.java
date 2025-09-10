@@ -1,6 +1,6 @@
 package edu.odu.cs.cs417;
 
-import static edu.odu.cs.cs417.convertToBase2.convertToBase2;
+
 
 public class main {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class main {
             break;
         }
         // Convert and print the number in base passed in args
-        convertToBase2(num, base);
+        ConvertBase.convertBase(num, base);
     }
     
         
